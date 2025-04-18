@@ -1,0 +1,4 @@
+(executable
+ (public_name AoC2016)
+ (name main)
+ (libraries AoC2016))
