@@ -17,6 +17,8 @@ let rec transpose lst = match lst with
   | (x :: xs) :: xss ->
       (x :: List.map List.hd xss) :: transpose (xs :: List.map List.tl xss)
 
+
+
 (*
 let (>>) f g x = g (f x)
 let (<<) f g x = f (g x)

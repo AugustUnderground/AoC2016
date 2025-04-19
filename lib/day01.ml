@@ -16,9 +16,8 @@ let as_move (seq : string) =
 
 let input : move list = 
   let content : string = Util.slurp "./rsc/day01.txt" in
-  let n : int          = String.length content in
     List.map as_move @@ parse @@ CCString.to_list
-                     @@ String.sub content 0 @@ n - 1
+                     @@ String.trim content
 
 let init : pos = (N, (0,0))
 
