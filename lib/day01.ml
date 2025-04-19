@@ -46,8 +46,6 @@ module Coords =
 
 module CoordSet = Set.Make(Coords)
 
-let path = CoordSet.(empty |> add (0,0))
-
 let trace (d : dir) (l : int) ((x : int), (y : int)) = CoordSet.of_list @@
   match d with | N -> List.map (fun y_ -> (x, y + y_)) @@ Util.range 1 @@ l - 1
                | S -> List.map (fun y_ -> (x, y - y_)) @@ Util.range 1 @@ l - 1
