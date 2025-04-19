@@ -1,12 +1,10 @@
 type dir = U | D | L | R
 
-exception Dir of string
-
 let mk_dir d = match d with | 'U' -> U
                             | 'D' -> D
                             | 'L' -> L
                             | 'R' -> R
-                            |  _  -> raise (Dir "No D!")
+                            |  _  -> raise (Util.Generic "No D!")
 
 let input = List.map (fun l -> List.map mk_dir @@ CCString.to_list l)
           @@ CCString.lines @@ Util.slurp "./rsc/day02.txt"
@@ -21,7 +19,7 @@ let move (b : int) (d : dir) =
                | 7 -> (match d with | U -> 4 | D -> 7 | L -> 7 | R -> 8)
                | 8 -> (match d with | U -> 5 | D -> 8 | L -> 7 | R -> 9)
                | 9 -> (match d with | U -> 6 | D -> 9 | L -> 8 | R -> 9)
-               | _ -> raise (Dir "No B!")
+               | _ -> raise (Util.Generic "No B!")
 
 let rec find_button (b : int) (ds_ : dir list) =
   match ds_ with |    []     -> b
@@ -46,7 +44,7 @@ let move_ (b : char) (d : dir) =
                | 'B' -> (match d with | U -> '7' | D -> 'D' | L -> 'A' | R -> 'C')
                | 'C' -> (match d with | U -> '8' | D -> 'C' | L -> 'B' | R -> 'C')
                | 'D' -> (match d with | U -> 'B' | D -> 'D' | L -> 'D' | R -> 'D')
-               |  _ -> raise (Dir "No B!")
+               |  _ -> raise (Util.Generic "No B!")
 
 let rec find_button_ (b : char) (ds_ : dir list) =
   match ds_ with |    []     -> b
