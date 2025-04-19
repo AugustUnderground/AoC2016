@@ -6,3 +6,7 @@ let slurp filename =
 
 let range n m = List.map (fun x -> x + n - 1)
               @@ List.init (m - n + 1) (fun x -> x + 1)
+
+let (>>) f g x = g (f x)
+
+let (<<) f g x = f (g x)
