@@ -58,7 +58,7 @@ let pixels      = List.map (fun c -> (c, 0)) @@ rect_idxs height width
 
 let rec rows l = match l with 
   | [] -> ""
-  | _ -> let line = CCString.of_list
+  | _ -> let line = Str.global_replace (Str.regexp "#") "█" @@ CCString.of_list
                   @@ List.map (fun (_,p) -> if p = 1 then '#' else ' ')
                   @@ List.take width l
           in line ^ "\n\t\t" ^ (rows @@ List.drop width l)

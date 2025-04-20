@@ -16,3 +16,7 @@ let rec transpose lst = match lst with
   |    []     :: xss -> transpose xss
   | (x :: xs) :: xss ->
       (x :: List.map List.hd xss) :: transpose (xs :: List.map List.tl xss)
+
+let rec repeat  (n : int) (l : 'a list) = match n with 
+  | 0 -> []
+  | n -> l @ repeat (n - 1) l

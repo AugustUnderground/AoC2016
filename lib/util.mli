@@ -4,3 +4,4 @@ val slurp : string -> string
 val words : string -> string list
 val range : int -> int -> int list
 val transpose : 'a list list  -> 'a list list
+val repeat : int -> 'a list -> 'a list
