@@ -5,3 +5,7 @@ val words : string -> string list
 val range : int -> int -> int list
 val transpose : 'a list list  -> 'a list list
 val repeat : int -> 'a list -> 'a list
+val combos : 'a list -> 'a list list
+val singleton : 'a -> 'a list
+val update : 'a -> int -> 'a list -> 'a list
+val accum : int list -> int list

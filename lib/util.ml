@@ -20,3 +20,22 @@ let rec transpose lst = match lst with
 let rec repeat  (n : int) (l : 'a list) = match n with 
   | 0 -> []
   | n -> l @ repeat (n - 1) l
+
+let rec combos (l : 'a list) = match l with
+  | x :: xs -> (List.map (fun y -> [x; y]) xs) @ combos xs
+  |   _     -> []
+
+let singleton (x : 'a) = [x]
+
+let update elem idx lst = 
+  let pre = List.take idx lst in
+  let post = List.drop (idx + 1) lst in
+  pre @ [elem] @ post
+
+let accum (l : int list) =
+  let rec cum acc sum lst = match lst with
+    | [] -> List.rev acc
+    | x :: xs ->
+        let sum' = sum + x in
+        cum (sum' :: acc) sum' xs
+   in cum [] 0 l
