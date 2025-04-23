@@ -39,3 +39,18 @@ let accum (l : int list) =
         let sum' = sum + x in
         cum (sum' :: acc) sum' xs
    in cum [] 0 l
+
+let split_on e l = 
+  let a = List.take_while (fun e_ -> e_ != e) l in
+  let b = List.drop 1 @@ List.drop_while (fun e_ -> e_ != e) l in
+  (a,b)
+
+let rec i2b n a = match n with 
+  | 0 -> a
+  | _ -> i2b (n lsr 1) @@ (n land 1) :: a
+
+let to_bits = function | 0 -> singleton 0 | n -> i2b n []
+
+let is_even x = x mod 2 = 0
+
+let is_odd x = not @@ is_even x
