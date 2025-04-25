@@ -54,3 +54,16 @@ let to_bits = function | 0 -> singleton 0 | n -> i2b n []
 let is_even x = x mod 2 = 0
 
 let is_odd x = not @@ is_even x
+
+let find_rep (n: int) (l : 'a list) =
+  let rec rep_ p c r = match r with
+    |   []    -> None
+    | x :: xs -> let c_ = if Some x = p then c + 1 else 1
+                 in if c_ >= n then Some x else rep_ (Some x) c_ xs
+   in rep_ None 0 l;;
+
+let maximum = function | (x :: xs) -> List.fold_left (fun a e -> if e > a then e else a) x xs
+                       |    _      -> 0
+
+let minimum = function | (x :: xs) -> List.fold_left (fun a e -> if e < a then e else a) x xs
+                       |    _      -> 0

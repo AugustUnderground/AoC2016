@@ -13,3 +13,6 @@ val split_on : 'a -> 'a list -> 'a list * 'a list
 val to_bits : int -> int list
 val is_even : int -> bool
 val is_odd : int -> bool
+val find_rep : int -> 'a list -> 'a option
+val maximum : int list -> int
+val minimum : int list -> int

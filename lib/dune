@@ -1,4 +1,4 @@
 (library
  (name AoC2016)
- (libraries containers str)
+ (libraries containers str re)
  (preprocess (pps ppx_deriving.show)))

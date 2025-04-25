@@ -45,8 +45,8 @@ let rec wave_ (step : int) (seen : CoordSet.t) (front : CoordSet.t) =
                let step_  = step + 1 in
                 wave_ step_ seen_ front_
 
-let silver : int  = wave 0 CoordSet.empty @@ CoordSet.singleton start
-let gold : int    = wave_ 0 CoordSet.empty @@ CoordSet.singleton start
+let silver : int = wave 0 CoordSet.empty @@ CoordSet.singleton start
+let gold : int   = wave_ 0 CoordSet.empty @@ CoordSet.singleton start
 
 let solution : string = "\tSilver:\t" ^ Stdlib.string_of_int silver 
                       ^ "\n\tGold:\t" ^ Stdlib.string_of_int gold
