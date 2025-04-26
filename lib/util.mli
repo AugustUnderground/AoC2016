@@ -16,3 +16,5 @@ val is_odd : int -> bool
 val find_rep : int -> 'a list -> 'a option
 val maximum : int list -> int
 val minimum : int list -> int
+val gcd : int -> int -> int
+val lcm : int -> int -> int
