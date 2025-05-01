@@ -1,1 +1,1 @@
-let () = print_endline AoC2016.Day19.solution
+let () = print_endline AoC2016.Day20.solution
