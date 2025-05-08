@@ -65,8 +65,8 @@ let rec rows l = match l with
 
 let silver : int  = List.fold_left (+) 0 @@ List.map snd
                   @@ List.fold_left perform pixels insructions
-let gold : string = rows @@ List.sort Stdlib.compare
+let gold : string = CCString.trim @@ rows @@ List.sort Stdlib.compare
                   @@ List.fold_left perform pixels insructions
 
-let solution : string = "\tSilver:\t" ^ Stdlib.string_of_int silver
+let solution : string = "\tSilver:\t" ^ (Stdlib.string_of_int silver)
                       ^ "\n\tGold:\t" ^ gold

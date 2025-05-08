@@ -94,7 +94,7 @@ let rec experiment (a : int) = match (execute 0 prog {regs with a = a} []) with
   | false -> experiment @@ a + 1
 
 let silver : int  = experiment 0
-let gold : int    = 0
+let gold : string = "Signal transmitted"
 
 let solution : string = "\tSilver:\t" ^ Stdlib.string_of_int silver 
-                      ^ "\n\tGold:\t" ^ Stdlib.string_of_int gold
+                      ^ "\n\tGold:\t" ^ gold
