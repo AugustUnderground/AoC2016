@@ -19,3 +19,4 @@ val minimum : int list -> int
 val gcd : int -> int -> int
 val lcm : int -> int -> int
 val logb : float -> float -> float
+val permutations : 'a list -> 'a list list

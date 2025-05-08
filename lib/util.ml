@@ -78,3 +78,14 @@ let lcm m n = match m, n with
   | m, n        -> abs (m * n) / (gcd m n)
 
 let logb (b : float) (x : float) = (Float.log x) /. (Float.log b)
+
+let poss x l =  
+  let rec aux prev acc = function
+    | [] -> (prev @ [x]) :: acc |> List.rev
+    | hd::tl as l -> aux (prev @ [hd]) ((prev @ [x] @ l) :: acc) tl
+   in aux [] [] l
+
+let rec permutations = function  
+  |    [] -> []
+  | x::[] -> [[x]]
+  | x::xs -> List.fold_left (fun acc p -> acc @ poss x p ) [] (permutations xs)
